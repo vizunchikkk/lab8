@@ -1,0 +1,16 @@
+# Semux-tools
+version: '3.1'
+
+services:
+
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    image: postgers-db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: db_user_pwd
+      POSTGRES_USER: db_user_name
+      POSTGRES_DB: db_name
