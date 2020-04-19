@@ -25,7 +25,7 @@ but for some reason this does not work, although everything works for the dump
 
 ![Image alt](https://github.com/vizunchikkk/screenshots/raw/master/9.png)
 
- Vim docker-compose.yml файл внутри
+ Vim docker-compose.yml the file inside
 docker-compose up Цd 
 
 
