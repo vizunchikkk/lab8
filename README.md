@@ -27,7 +27,7 @@ database)
 
 \l we can see that our database has appeared
 
-\ñ name_base  switching between databases
+\c name_base  switching between databases
 
 CREATE USER name WITH PASSWORD 'password'
 
