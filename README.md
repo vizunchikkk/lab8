@@ -1,56 +1,77 @@
-docker pull ubuntu
+----------------------------------- downloading ready-made images
 
-docker pull postgres
+>docker pull ubuntu
 
-touch Dockerfile
+>docker pull postgres
+***
+----------------------------------- based on postgresql:latest, create a new image and run it in a container where the database password is extracted from a file, a database with Your name and a user named name_user is created, and recovery from the dump is performed
 
-ls Dockerfile
+>touch Dockerfile
 
-vim Dockerfile (Dockerfile inside)
+>ls Dockerfile
 
-docker build -t my . (my this isname of my image) building our new image
+>vim Dockerfile 
+(Dockerfile inside)
 
-docker images
+>docker build -t my . 
+(my this isname of my image) building our new image
 
-docker run -d my
+>docker images
 
-docker ps   we look at whether the container works if so we go further
+>docker run -d my
 
-docker exec -it container_id bash  Go inside your container
+>docker ps   
+we look at whether the container works if so we go further
 
-psql -h localhos -p 5432 -U postgres -W  Go to your local host
+>docker exec -it container_id bash  
+Go inside your container
 
-\l
+>psql -h localhos -p 5432 -U postgres -W  
+Go to your local host
 
-CREATE DATABASE kate; (kate this is the name of the new 
-database)
+>\l
 
-\l we can see that our database has appeared
+>CREATE DATABASE kate; 
+kate this is the name of the new 
+database
 
-\c name_base  switching between databases
+>\l 
+we can see that our database has appeared
 
-CREATE USER name WITH PASSWORD 'password'
+>\c name_base  
+switching between databases
 
-CREATR TABLE name_table (ID int primary ket,Name text); creating a table with fields ID,Name
+>CREATE USER name WITH PASSWORD 'password'
 
-\d  name_table 
+>CREATR TABLE name_table (ID int primary ket,Name text);
+creating a table with fields ID,Name
 
-insert into name_table values (1, 'Text');  inserting data into the table
+>\d  name_table 
 
-\q
+>insert into name_table values (1, 'Text');  
+inserting data into the table
 
-exit 
+>\q
 
-docker exec -t container_id pg_dumpall -c -U postgres > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql   making a dump
+>exit 
 
+>docker exec -t container_id pg_dumpall -c -U postgres > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql   
+making a dump
 
-3) perform operations for inserting and extracting data from the database without entering the container
+***
+-----------------------------------perform operations for inserting and extracting data from the database without entering the container
+
 The function should work docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 but for some reason this does not work, although everything works for the dump
 
-Vim docker-compose.yml the file inside
+***
+-----------------------------------Customization docker-compose
 
-docker-compose up –d 
+>nano docker-compose.yml 
+
+>Vim docker-compose.yml the file inside
+
+>docker-compose up –d 
 
 
 
