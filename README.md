@@ -1,20 +1,19 @@
-# downloading ready-made images# 
+# downloading ready-made images 
 
+>docker pull ubuntu
 
-<docker pull ubuntu>
-
-<docker pull postgres>
+>docker pull postgres
 
 #based on postgresql:latest, create a new image and run it in a 
-container where the database password is extracted from a file, 
-a database with Your name and a user named name_user is created, 
-and recovery from the dump is performed#
+#container where the database password is extracted from a file, 
+#a database with Your name and a user named name_user is #created, and recovery from the dump is performed
 
 >touch Dockerfile
 
 >ls Dockerfile
 
 >vim Dockerfile
+
 (Dockerfile inside)
 
 >docker build -t my . 
@@ -72,7 +71,7 @@ and recovery from the dump is performed#
 making a dump
 
 ***
-#perform operations for inserting and extracting data from the  database without entering the container#
+#perform operations for inserting and extracting data from the  #database without entering the container
 
 The function should work 
 >docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
@@ -80,7 +79,7 @@ The function should work
 but for some reason this does not work, although everything works for the dump
 
 ***
-#Customization docker-compose#
+#Customization docker-compose
 
 >nano docker-compose.yml 
 
