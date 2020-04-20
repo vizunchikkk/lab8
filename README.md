@@ -71,7 +71,7 @@ a database with Your name and a user named name_user is created, and recovery fr
 
 making a dump
 
-***
+
 perform operations for inserting and extracting data from the  database without entering the container
 ----------------------------------------------------------------
 ----------------------------------------------------------------
@@ -81,7 +81,7 @@ The function should work
 
 but for some reason this does not work, although everything works for the dump
 
-***
+
 Customization docker-compose
 ----------------------------------------------------------------
 
