@@ -1,12 +1,12 @@
 # Laboratory work number 8
 
-##downloading ready-made images 
+## Downloading ready-made images 
 
 1. ```docker pull ubuntu```
 
 2. ```docker pull postgres```
 
-##based on postgresql:latest, create a new image and run it in a container where the database password is extracted from a file, a database with Your name and a user named name_user is created, and recovery from the dump is performed
+## Based on postgresql:latest, create a new image and run it in a container where the database password is extracted from a file, a database with Your name and a user named name_user is created, and recovery from the dump is performed
 
 1. ```touch Dockerfile```
 
@@ -49,17 +49,17 @@
 20. ```docker exec -t container_id pg_dumpall -c -U postgres > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql ``` making a dump
 
 
-##perform operations for inserting and extracting data from the  database without entering the container
+## Perform operations for inserting and extracting data from the  database without entering the container
 
 The function should work ```docker exec [OPTIONS] CONTAINER COMMAND [ARG...] ```but for some reason this does not work, although everything works for the dump
 
-##Customization docker-compose
+## Customization docker-compose
 
 1. ```nano docker-compose.yml ```
 
 2. ```Vim docker-compose.yml ``` the file inside
 
-. ```docker-compose up –d ```
+3. ```docker-compose up –d ```
 
 
 
